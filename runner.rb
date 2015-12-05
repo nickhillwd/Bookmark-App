@@ -39,19 +39,24 @@ get '/bookmarks/:id/edit' do
   erb :edit
 end
 
-post '/tasks/:id' do
-  # persists the edited task to the DB where id = :id
+# persists the edited task to the DB where id = :id
+post '/bookmarks/:id' do
   new_name = params[:name]
-  new_details = params[:details]
+  new_genre = params[:genre]
+  new_info = params[:info]
   edit_id = params[:id]
-  sql = "UPDATE tasks SET name = '#{new_name}', details = '#{new_details}' WHERE id = #{edit_id}"
+  sql = "UPDATE bookmarks SET name = '#{new_name}', genre = '#{new_genre}', info = '#{new_info}'  WHERE id = #{edit_id}"
 
   run_sql(sql)
-  redirect to("/tasks/#{params[:id]}")
+  redirect to("/bookmarks/#{params[:id]}")
 end
 
-# persists the edited task to the DB where id = :id
 # deleted task from DB where id = :id
+post '/bookmarks/:id/delete' do
+  sql = "DELETE FROM bookmarks WHERE id = #{params[:id]}"
+  run_sql(sql)
+  redirect to('/bookmarks')
+end
 
 def run_sql(sql)
   connect = PG.connect(dbname: 'bookmark', host: 'localhost')
