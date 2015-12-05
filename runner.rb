@@ -17,12 +17,21 @@ end
 
 # persists new task to DB
 post '/bookmarks' do
+  name = params[:name]
+  genre = params[:genre]
+  info = params[:info]
   sql = "INSERT INTO bookmarks (name, genre, info) VALUES ('#{name}', '#{genre}', '#{info}')"
   run_sql(sql)
   redirect to('/bookmarks')
 end
 
 # get individual task from DB where id = :id
+get '/booomarks/:id' do
+  sql = "SELECT * FROM tasks WHERE id = #{params[:id]}"
+  @individual_bookmark = run_sql(sql)
+  erb :show
+end
+
 # retrieve and edit a task from DB where id = :id
 # persists the edited task to the DB where id = :id
 # deleted task from DB where id = :id
