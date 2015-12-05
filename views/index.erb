@@ -1,5 +1,3 @@
-<h1>Visual test</h1>
-
 <h1>ToDoApp</h1>
 
 <% @bookmarks.each do |bookmark| %>
@@ -11,5 +9,4 @@
   <p><%= bookmark['info'] %></p>
   <a href="/bookmarks/<%= bookmark['id'] %>">View This Bookmark</a>
 
-  <hr>
 <% end %>

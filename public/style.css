@@ -1,0 +1,67 @@
+html { 
+  background: url(img/MacScreenBackground.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+nav {
+  border-bottom: 2px solid black;
+  background: white;
+  padding-top: 7px;
+}
+
+ul {
+  display:block;
+  text-align:center;
+  padding-left: 0px;
+}
+
+ul li {
+  display:inline;
+  margin: 0 20px; 
+}
+
+a {
+  text-decoration: none;
+  font-family: Helvetica;
+}
+
+form {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+button {
+  display:block;
+  text-align: center;
+  margin:auto;
+  margin-top: 30px
+}
+
+p {
+  font-family:Helvetica;
+}
+
+h1 {
+ font-family:Helvetica; 
+}
+
+h2 {
+  font-family:Helvetica;
+}
+
+h3 {
+  font-family:Helvetica;
+}
+
+#yield {
+  padding-top: 50px;
+  text-align: center;
+}
