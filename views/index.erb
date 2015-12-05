@@ -1,0 +1,15 @@
+<h1>Visual test</h1>
+
+<h1>ToDoApp</h1>
+
+<% @bookmarks.each do |bookmark| %>
+  <h5>Bookmark Name:</h5>
+  <p><%= bookmark['name'] %></p>
+  <h5>Bookmark Genre:</h5>
+  <p><%= bookmark['genre'] %></p>
+  <h5>Bookmark info:</h5>
+  <p><%= bookmark['info'] %></p>
+  <a href="/bookmarks/<%= bookmark['id'] %>">View This Bookmark</a>
+
+  <hr>
+<% end %>
