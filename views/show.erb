@@ -1,0 +1,16 @@
+<% @individual_bookmark.each do |bookmark| %>
+  <h5>Bookmark Name:</h5>
+  <p><%= bookmark['name'] %></p>
+  <h5>Bookmark Genre:</h5>
+  <p><%= bookmark['genre'] %></p>
+  <h5>Bookmark Info:</h5>
+  <p><%= bookmark['info'] %></p>
+  <a href="/bookmarks/<%= bookmark['id'] %>/edit">Edit This Bookmark</a>
+
+  <br>
+
+
+  <br>
+  <hr>
+
+<% end %>

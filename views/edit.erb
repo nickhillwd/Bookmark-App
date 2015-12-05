@@ -1,0 +1,24 @@
+<form action="/bookmarks/<%= @edit_bookmark['id'] %>" method='post'>
+
+  <label for='name'>URL:</label>
+  <input type='text' name='name' value="<%= @edit_bookmark['name'] %>">
+
+  <br>
+  <br>
+
+  <label for='name'>Genre:</label>
+  <input type='text' name='genre' value="<%= @edit_bookmark['genre'] %>">
+
+  <br>
+  <br>
+
+
+  <label for='info'>Info:</label>
+  <textarea name='info'><%= @edit_bookmark['info'] %></textarea>
+
+  <br>
+  <br>
+  
+  <button>Submit Edited Task</button>
+
+</form>
