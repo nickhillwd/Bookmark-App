@@ -58,6 +58,11 @@ post '/bookmarks/:id/delete' do
   redirect to('/bookmarks')
 end
 
+#search for keywork from DB
+get '/bookmarks/search' do
+  redirect to('/bookmarks')
+end
+
 def run_sql(sql)
   connect = PG.connect(dbname: 'bookmark', host: 'localhost')
 
