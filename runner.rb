@@ -15,6 +15,14 @@ get '/bookmarks/new' do
   erb :new
 end
 
+#search for keywork from DB
+get '/bookmarks/search' do
+  search_input = params[:name]
+  sql = "SELECT * FROM bookmarks WHERE name LIKE '#{search_input}' and genre LIKE '#{search_input}'"
+  @bookmarks = run_sql(sql)
+  erb :index
+end
+
 # persists new task to DB
 post '/bookmarks' do
   name = params[:name]
@@ -58,10 +66,6 @@ post '/bookmarks/:id/delete' do
   redirect to('/bookmarks')
 end
 
-#search for keywork from DB
-get '/bookmarks/search' do
-  redirect to('/bookmarks')
-end
 
 def run_sql(sql)
   connect = PG.connect(dbname: 'bookmark', host: 'localhost')

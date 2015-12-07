@@ -6,10 +6,15 @@ html {
   background-size: cover;
 }
 
+body {
+  margin:0px;
+}
+
 nav {
   border-bottom: 2px solid black;
   background: white;
   padding-top: 0px;
+  margin: 0 0 16px 0;
 }
 
 ul {
@@ -79,10 +84,11 @@ a {
 }
 
 #yield {
-  padding-top: 25px;
+  margin-top:35px;
+  padding-top: 0px;
   text-align: center;
-  overflow-y: scroll; 
-  height:400px;">
+  overflow-y: auto;
+  height:350px;
 }
 
 textarea {
