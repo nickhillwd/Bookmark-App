@@ -18,7 +18,8 @@ end
 #search for keywork from DB
 get '/bookmarks/search' do
   search_input = params[:name]
-  sql = "SELECT * FROM bookmarks WHERE name LIKE '#{search_input}' and genre LIKE '#{search_input}'"
+  # sql = "SELECT * FROM bookmarks WHERE name LIKE '%#{search_input}%' and genre LIKE '%#{search_input}%'"
+  sql = "SELECT * FROM bookmarks WHERE name LIKE '%#{search_input}%'"
   @bookmarks = run_sql(sql)
   erb :index
 end
